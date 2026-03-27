@@ -130,7 +130,9 @@ Download the dataset from Kaggle and update the DATA_PATH variable inside the .p
 ### Execution
 Navigate to the file.py within the root folder and execute the script.
 
-  
+
+  ## Citation
+
 @inproceedings{gherbi2026multimodal,
   author={Gherbi, Djaafer and Benomar, Mohammed Lamine},
   booktitle={2026 International Conference on Speech, Multimodal and Advanced Communication Systems (ICSMACS)}, 
