@@ -61,23 +61,23 @@ Experiments were conducted on the **Indiana University Chest X-ray Collection**,
 
 ## 📁 Repository Structure
 
-├── models/ # Saved model checkpoints
-│ ├── EarlyConcat_best.pt
-│ ├── GMU_best.pt
-│ ├── BilinearFusion_best.pt
-│ ├── JointTransformer_best.pt
-│ └── LowRankFusion_best.pt
-│
-├── plots/ # Generated visualizations
-│ ├── EarlyConcat_training_curves.png
-│ ├── GMU_training_curves.png
-│ ├── model_comparison.png 
-│ ├── model_comparison_radar_log.png 
-│ └── confusion_matrices/ 
-│ └── ...
-│
-├── logs.txt
-└── results.json
+├── models/ # Saved model checkpoints  
+│ ├── EarlyConcat_best.pt  
+│ ├── GMU_best.pt  
+│ ├── BilinearFusion_best.pt  
+│ ├── JointTransformer_best.pt  
+│ └── LowRankFusion_best.pt  
+│  
+├── plots/ # Generated visualizations   
+│ ├── EarlyConcat_training_curves.png  
+│ ├── GMU_training_curves.png  
+│ ├── model_comparison.png   
+│ ├── model_comparison_radar_log.png   
+│ └── confusion_matrices.png   
+│ └── ...  
+│  
+├── logs.txt    
+└── results.json  
 
 
 
@@ -119,16 +119,24 @@ Our findings establish that **multiplicative interaction methods** (Low-Rank Fus
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
+Ensure you have Python 3.8+ installed along with the required libraries:  
+!pip install tensorflow pandas numpy scikit-learn matplotlib seaborn  
+### Dataset Setup
+Download the dataset from Kaggle and update the DATA_PATH variable inside the .py script of the model you wish to run to point to your local dataset directory.  
+### Execution
+Navigate to the file.py within the root folder and execute the script.
 
-Ensure you have Python 3.8+ with CUDA-capable GPU (recommended):
+  
+@inproceedings{gherbi2026multimodal,
+  author={Gherbi, Djaafer and Benomar, Mohammed Lamine},
+  booktitle={2026 International Conference on Speech, Multimodal and Advanced Communication Systems (ICSMACS)}, 
+  title={Comparative Analysis of Vector-Level Multimodal Fusion Strategies for Medical Diagnostic Classification}, 
+  year={2026},
+  pages={6},
+  doi={--},
+}
 
-# Clone the repository
-git clone https://github.com/yourusername/fusion-medical-classification.git
-cd fusion-medical-classification
-
-# Install dependencies
-pip install -r requirements.txt
-
+For questions or collaborations, please reach out via the provided university email addresses in the paper.
