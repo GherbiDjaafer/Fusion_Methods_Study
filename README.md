@@ -13,18 +13,17 @@ This study provides a rigorous, parameter-balanced comparative analysis of five 
 
 ---
 
-## 📋 Table of Contents
-- [Overview & Methodology](#overview--methodology)
-- [Dataset](#dataset)
-- [Repository Structure](#repository-structure)
-- [Key Results](#key-results)
-- [How to Run](#how-to-run)
-- [Citation](#citation)
-- [License](#license)
+## Table of Contents
+- [Overview & Methodology](#Overview-&-Methodology)
+- [Dataset](#Dataset)
+- [Repository Structure](#Repository-Structure)
+- [Key Results](#Key-Results)
+- [How to Run](#How-to-Run)
+- [Citation](#Citation)
 
 ---
 
-## 🔬 Overview & Methodology
+## Overview & Methodology
 
 Automated diagnosis from multimodal medical data (imaging + clinical text) is critical for robust clinical decision support. This repository implements a **unified, parameter-balanced framework** comparing five vector-level multimodal fusion strategies:
 
@@ -47,7 +46,7 @@ To ensure strictly fair comparison, all fusion methods share:
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 Experiments were conducted on the **Indiana University Chest X-ray Collection**, containing paired frontal chest radiographs and free-text radiology reports.
 
@@ -61,7 +60,7 @@ Experiments were conducted on the **Indiana University Chest X-ray Collection**,
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ├── models/ # Saved model checkpoints  
 │ ├── EarlyConcat_best.pt  
@@ -85,7 +84,7 @@ Experiments were conducted on the **Indiana University Chest X-ray Collection**,
 
 ---
 
-## 📈 Key Results
+## Key Results
 
 Our findings establish that **multiplicative interaction methods** (Low-Rank Fusion, Bilinear Fusion) significantly outperform additive and attention-based approaches for vector-level multimodal medical classification under strict parameter constraints.
 
