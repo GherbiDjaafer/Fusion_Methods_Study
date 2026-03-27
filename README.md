@@ -133,13 +133,13 @@ Navigate to the file.py within the root folder and execute the script.
 
   ## Citation
 
-@inproceedings{gherbi2026multimodal,
-  author={Gherbi, Djaafer and Benomar, Mohammed Lamine},
-  booktitle={2026 International Conference on Speech, Multimodal and Advanced Communication Systems (ICSMACS)}, 
-  title={Comparative Analysis of Vector-Level Multimodal Fusion Strategies for Medical Diagnostic Classification}, 
-  year={2026},
-  pages={6},
-  doi={--},
-}
+@inproceedings{gherbi2026multimodal,   
+  author={Gherbi, Djaafer and Benomar, Mohammed Lamine},  
+  booktitle={2026 International Conference on Speech, Multimodal and Advanced Communication Systems (ICSMACS)},   
+  title={Comparative Analysis of Vector-Level Multimodal Fusion Strategies for Medical Diagnostic Classification},   
+  year={2026},  
+  pages={6},  
+  doi={--},  
+}  
 
 For questions or collaborations, please reach out via the provided university email addresses in the paper.
