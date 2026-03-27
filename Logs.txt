@@ -1,0 +1,142 @@
+================================================================================
+MULTIMODAL FUSION COMPARISON
+================================================================================
+Device: cuda
+Dataset: 3818 samples, 3028 abnormal (79.3%)
+Split: Train=2673, Val=572, Test=573
+Loading weights: 100%
+ 199/199 [00:00<00:00, 1222.47it/s, Materializing param=pooler.dense.weight]
+BertModel LOAD REPORT from: emilyalsentzer/Bio_ClinicalBERT
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.decoder.weight             | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[EarlyConcat] 525,057 parameters
+[GMU] 522,581 parameters (bottleneck=188)
+[BilinearFusion] 525,313 parameters
+[JointTransformer] 526,977 parameters (dim=128)
+[LowRankFusion] 550,145 parameters (rank=32)
+================================================================================
+PARAMETER COUNT VERIFICATION
+================================================================================
+EarlyConcat         : 525,057 parameters
+GMU                 : 522,581 parameters
+BilinearFusion      : 525,313 parameters
+JointTransformer    : 526,977 parameters
+LowRankFusion       : 550,145 parameters
+Parameter ratio (max/min): 1.05x
+Parameter balance acceptable for fair comparison
+================================================================================
+================================================================================
+TRAINING: EarlyConcat
+================================================================================
+Epoch 02 | Loss: 0.1926 | Val AUC: 0.8909
+Epoch 04 | Loss: 0.1568 | Val AUC: 0.9117
+Epoch 06 | Loss: 0.1324 | Val AUC: 0.9261
+Epoch 08 | Loss: 0.1096 | Val AUC: 0.9382
+Epoch 10 | Loss: 0.0993 | Val AUC: 0.9427
+Epoch 12 | Loss: 0.0875 | Val AUC: 0.9485
+Epoch 14 | Loss: 0.0893 | Val AUC: 0.9498
+Epoch 16 | Loss: 0.0701 | Val AUC: 0.9510
+Epoch 18 | Loss: 0.0593 | Val AUC: 0.9566
+Epoch 20 | Loss: 0.0512 | Val AUC: 0.9585
+Computing bootstrap CIs...
+>>> TEST RESULTS:
+AUC:  0.9550 [0.9315-0.9763]
+F1:   0.9489 [0.9335-0.9639]
+================================================================================
+TRAINING: GMU
+================================================================================
+Epoch 02 | Loss: 0.1668 | Val AUC: 0.9166
+Epoch 04 | Loss: 0.1244 | Val AUC: 0.9458
+Epoch 06 | Loss: 0.1017 | Val AUC: 0.9566
+Epoch 08 | Loss: 0.0727 | Val AUC: 0.9593
+Epoch 10 | Loss: 0.0619 | Val AUC: 0.9687
+Epoch 12 | Loss: 0.0555 | Val AUC: 0.9653
+Epoch 14 | Loss: 0.0543 | Val AUC: 0.9700
+Epoch 16 | Loss: 0.0358 | Val AUC: 0.9704
+Epoch 18 | Loss: 0.0254 | Val AUC: 0.9713
+Epoch 20 | Loss: 0.0240 | Val AUC: 0.9724
+Computing bootstrap CIs...
+>>> TEST RESULTS:
+AUC:  0.9608 [0.9336-0.9835]
+F1:   0.9663 [0.9537-0.9783]
+================================================================================
+TRAINING: BilinearFusion
+================================================================================
+Epoch 02 | Loss: 0.1727 | Val AUC: 0.9152
+Epoch 04 | Loss: 0.1328 | Val AUC: 0.9451
+Epoch 06 | Loss: 0.1122 | Val AUC: 0.9593
+Epoch 08 | Loss: 0.0997 | Val AUC: 0.9666
+Epoch 10 | Loss: 0.0856 | Val AUC: 0.9699
+Epoch 12 | Loss: 0.0813 | Val AUC: 0.9707
+Epoch 14 | Loss: 0.0662 | Val AUC: 0.9728
+Epoch 16 | Loss: 0.0640 | Val AUC: 0.9712
+Epoch 18 | Loss: 0.0507 | Val AUC: 0.9743
+Epoch 20 | Loss: 0.0505 | Val AUC: 0.9733
+Computing bootstrap CIs...
+>>> TEST RESULTS:
+AUC:  0.9672 [0.9452-0.9858]
+F1:   0.9709 [0.9596-0.9816]
+================================================================================
+TRAINING: JointTransformer
+================================================================================
+Epoch 02 | Loss: 0.1647 | Val AUC: 0.9272
+Epoch 04 | Loss: 0.1233 | Val AUC: 0.9544
+Epoch 06 | Loss: 0.0989 | Val AUC: 0.9633
+Epoch 08 | Loss: 0.0783 | Val AUC: 0.9629
+Epoch 10 | Loss: 0.0735 | Val AUC: 0.9686
+Epoch 12 | Loss: 0.0664 | Val AUC: 0.9688
+Epoch 14 | Loss: 0.0503 | Val AUC: 0.9682
+Epoch 16 | Loss: 0.0552 | Val AUC: 0.9675
+Epoch 18 | Loss: 0.0451 | Val AUC: 0.9638
+Early stop at epoch 20
+Computing bootstrap CIs...
+>>> TEST RESULTS:
+AUC:  0.9570 [0.9278-0.9827]
+F1:   0.9700 [0.9581-0.9809]
+================================================================================
+TRAINING: LowRankFusion
+================================================================================
+Epoch 02 | Loss: 0.1548 | Val AUC: 0.9468
+Epoch 04 | Loss: 0.1256 | Val AUC: 0.9655
+Epoch 06 | Loss: 0.1055 | Val AUC: 0.9700
+Epoch 08 | Loss: 0.0997 | Val AUC: 0.9749
+Epoch 10 | Loss: 0.0873 | Val AUC: 0.9751
+Epoch 12 | Loss: 0.0757 | Val AUC: 0.9709
+Epoch 14 | Loss: 0.0682 | Val AUC: 0.9735
+Early stop at epoch 16
+Computing bootstrap CIs...
+>>> TEST RESULTS:
+AUC:  0.9702 [0.9498-0.9874]
+F1:   0.9671 [0.9556-0.9788]
+================================================================================
+FINAL RESULTS
+================================================================================
+Method               Params       AUC                       F1                       
+-------------------------------------------------------------------------------------
+EarlyConcat          525,057      0.955 [0.932-0.976]   0.949 [0.933-0.964]
+GMU                  522,581      0.961 [0.934-0.983]   0.966 [0.954-0.978]
+BilinearFusion       525,313      0.967 [0.945-0.986]   0.971 [0.960-0.982]
+JointTransformer     526,977      0.957 [0.928-0.983]   0.970 [0.958-0.981]
+LowRankFusion        550,145      0.970 [0.950-0.987]   0.967 [0.956-0.979]
+================================================================================
+GENERATING COMPARISON PLOTS
+================================================================================
+
+Saved radar charts to /kaggle/working/fusion_results/plots
+Plots saved to: /kaggle/working/fusion_results/plots
+Models saved to: /kaggle/working/fusion_results/models
+Results saved to: /kaggle/working/fusion_results/results.json
+================================================================================
+EXPERIMENT COMPLETE
+================================================================================
