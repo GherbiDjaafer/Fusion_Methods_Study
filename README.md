@@ -28,7 +28,7 @@ Automated diagnosis from multimodal medical data (imaging + clinical text) is cr
 
 | Method | Description | Reference |
 |--------|-------------|-----------|
-| **EarlyConcat** | Simple concatenation of unimodal features (baseline) | Huang et al., 2021 |
+| **EarlyConcat** | Simple concatenation of unimodal features (baseline) | Baseline |
 | **GMU** | Gated Multimodal Unit with adaptive modality weighting | Arevalo et al., 2017 |
 | **BilinearFusion** | Element-wise product of projected features (multiplicative interaction) | Teney et al., 2017 |
 | **JointTransformer** | Self-attention over concatenated modality tokens | Vaswani et al., 2017 |
