@@ -4,8 +4,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Dataset: Indiana Chest X-ray](https://img.shields.io/badge/Dataset-Indiana_Chest_X--ray-blue)](https://www.kaggle.com/datasets/raddar/chest-xrays-indiana-university)
-[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.19262195-1682d4?logo=zenodo)](https://doi.org/10.5281/zenodo.19262195)  
-
+[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.19262195-1682d4?logo=zenodo)](https://doi.org/10.5281/zenodo.19262195)
 
 This repository contains the official implementation for the paper: **"Comparative Analysis of Vector-Level Multimodal Fusion Strategies for Medical Diagnostic Classification"**.
 
@@ -14,12 +13,12 @@ This study provides a rigorous, parameter-balanced comparative analysis of five 
 ---
 
 ## Table of Contents
-- [Overview & Methodology](#Overview-&-Methodology)
-- [Dataset](#Dataset)
-- [Repository Structure](#Repository-Structure)
-- [Key Results](#Key-Results)
-- [How to Run](#How-to-Run)
-- [Citation](#Citation)
+- [Overview & Methodology](#overview--methodology)
+- [Dataset](#dataset)
+- [Repository Structure](#repository-structure)
+- [Key Results](#key-results)
+- [How to Run](#how-to-run)
+- [Citation](#citation)
 
 ---
 
@@ -29,13 +28,14 @@ Automated diagnosis from multimodal medical data (imaging + clinical text) is cr
 
 | Method | Description | Reference |
 |--------|-------------|-----------|
-| **EarlyConcat** | Simple concatenation of unimodal features (baseline) | Baseline |
+| **EarlyConcat** | Simple concatenation of unimodal features (baseline) | Huang et al., 2021 |
 | **GMU** | Gated Multimodal Unit with adaptive modality weighting | Arevalo et al., 2017 |
-| **BilinearFusion** | Element-wise product of projected features (multiplicative interaction) | - |
+| **BilinearFusion** | Element-wise product of projected features (multiplicative interaction) | Do et al., 2021 |
 | **JointTransformer** | Self-attention over concatenated modality tokens | Vaswani et al., 2017 |
 | **LowRankFusion** | Low-rank tensor decomposition for efficient bilinear interaction | Liu et al., 2018 |
 
 ### Unified Experimental Framework
+
 To ensure strictly fair comparison, all fusion methods share:
 
 - **Identical frozen encoders:** DenseNet-121 (ImageNet) for visual features, BioClinicalBERT for clinical text embeddings
@@ -61,6 +61,7 @@ Experiments were conducted on the **Indiana University Chest X-ray Collection**,
 ---
 
 ## Repository Structure
+
 
 ├── models/ # Saved model checkpoints  
 │ ├── EarlyConcat_best.pt  
@@ -91,7 +92,7 @@ Our findings establish that **multiplicative interaction methods** (Low-Rank Fus
 ### Test Set Performance
 
 | Method | AUC [95% CI] | F1-Score [95% CI] | Parameters | Best Epoch |
-|--------|--------------|-------------------|------------|------------|
+|--------|:------------:|:-----------------:|:----------:|:----------:|
 | **LowRankFusion** | **0.970 [0.950–0.987]** | 0.967 [0.956–0.979] | 550,145 | 10 (early stop 16) |
 | **BilinearFusion** | 0.967 [0.945–0.986] | **0.971 [0.960–0.982]** | 525,313 | 20 |
 | GMU | 0.961 [0.934–0.984] | 0.966 [0.954–0.978] | 522,581 | 10 |
@@ -110,8 +111,8 @@ Our findings establish that **multiplicative interaction methods** (Low-Rank Fus
 
 ### Training Dynamics Summary
 
-| Method | Peak Val AUC | Final Val AUC | Behavior |
-|--------|--------------|---------------|----------|
+| Method | Peak Val AUC | Final Val AUC | Training Behavior |
+|--------|:------------:|:-------------:|:-----------------|
 | LowRankFusion | 0.975 (epoch 10) | 0.973 (epoch 16) | Stable, early stop |
 | BilinearFusion | 0.973 (epoch 20) | 0.973 (epoch 20) | Monotonic increase |
 | GMU | 0.972 (epoch 20) | 0.972 (epoch 20) | Rapid early convergence |
@@ -119,6 +120,8 @@ Our findings establish that **multiplicative interaction methods** (Low-Rank Fus
 | EarlyConcat | 0.959 (epoch 20) | 0.959 (epoch 20) | Slow, steady improvement |
 
 ---
+
+
 
 ## How to Run
 
