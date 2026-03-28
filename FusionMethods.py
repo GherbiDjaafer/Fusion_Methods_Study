@@ -77,13 +77,15 @@ CFG = Config()
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Default paths (can be overridden via command line)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 DATA_PATHS = {
-    "proj_csv": "/kaggle/input/datasets/raddar/chest-xrays-indiana-university/indiana_projections.csv",
-    "report_csv": "/kaggle/input/datasets/raddar/chest-xrays-indiana-university/indiana_reports.csv",
-    "image_dir": "/kaggle/input/datasets/raddar/chest-xrays-indiana-university/images/images_normalized",
-    "output_dir": "/kaggle/working/fusion_results",
-    "models_dir": "/kaggle/working/fusion_results/models",
-    "plots_dir": "/kaggle/working/fusion_results/plots"
+    "proj_csv": BASE_DIR / "data" / "indiana_projections.csv",
+    "report_csv": BASE_DIR / "data" / "indiana_reports.csv",
+    "image_dir": BASE_DIR / "data" / "images" / "images_normalized",
+    "output_dir": BASE_DIR / "fusion_results",
+    "models_dir": BASE_DIR / "fusion_results" / "models",
+    "plots_dir": BASE_DIR / "fusion_results" / "plots"
 }
 
 def seed_everything(seed: int = 42) -> None:
